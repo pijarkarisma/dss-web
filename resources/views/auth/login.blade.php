@@ -1,9 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+        <x-slot name="authTitle">
+            <p class="text-5xl font-bold pb-5">Log in</p>
+            <p class="text-xl font-normal text-gray-400 lg:w-3/4">Silahkan masuk menggunakan akun yang sudah terdaftar</p>
         </x-slot>
 
         <!-- Session Status -->
