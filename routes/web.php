@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\DataMahasiswa;
 use App\Http\Livewire\Home;
+use App\Http\Livewire\KriteriaPenilaian;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +25,13 @@ Route::get('/', function () {
 // })->middleware(['auth'])->name('dashboard');
 
 Route::get('/dashboard', Home::class)->middleware(['auth'])->name('dashboard');
+
+Route::get('/kriteria-penilaian', KriteriaPenilaian::class)->name('kriteria.penilaian');
+
+Route::get('/data-mahasiswa', DataMahasiswa::class)->name('data.mahasiswa');
+
+Route::get('/data-penilaian', DataMahasiswa::class)->name('data.penilaian');
+
+Route::get('/hasil-seleksi', DataMahasiswa::class)->name('hasil.seleksi');
 
 require __DIR__ . '/auth.php';

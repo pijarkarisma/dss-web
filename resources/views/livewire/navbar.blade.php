@@ -1,4 +1,4 @@
-<div class="ml-[450px] py-12 flex w-full justify-between items-center mr-20">
+<div class="py-12 flex w-full justify-between items-center">
     <div>
         <label for="search" class="relative">
             <svg class="absolute z-10 top-1/2 pl-2 transform -translate-y-1/2 left-3 h-[25px]" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,12 +1,12 @@
-<div class="w-[350px] h-full shadow-lg bg-white absolute">
+<div class="w-[350px] flex-none h-screen shadow-lg bg-white">
     <div class="px-14 pt-12 pb-8">
         <p class="text-3xl font-semibold text-gray-500">Beasiswa</p>
         <p class="text-xl text-gray-500">Unika Atma Jaya</p>
     </div>
 
     <div class="grid">
-        <a href="" class="group flex items-center h-16 hover:bg-violet-50">
-            <svg class="h-full w-2 invisible group-hover:fill-dss-purple group-hover:visible relative">
+        <a href="{{ route('dashboard')}}" class="group flex items-center h-16 hover:bg-violet-50 @if($currentActivePage == 'dashboard') bg-violet-50 @endif">
+            <svg class="h-full w-2 group-hover:fill-dss-purple group-hover:visible relative @if($currentActivePage == 'dashboard') fill-dss-purple visible @else invisible @endif">
                 <rect class="w-2 h-full" />
             </svg>
             <svg class="mr-[30px] ml-12 stroke-gray-500 group-hover:stroke-dss-purple" width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,8 +14,8 @@
             </svg>
             <p class="text-lg font-medium text-gray-500 group-hover:font-semibold group-hover:text-dss-purple">Beranda</p>
         </a>
-        <a href="" class="group flex items-center h-16 hover:bg-violet-50">
-            <svg class="h-full w-2 invisible group-hover:fill-dss-purple group-hover:visible relative">
+        <a href="{{ route('kriteria.penilaian') }}" class="group flex items-center h-16 hover:bg-violet-50 @if($currentActivePage == 'kriteria.penilaian') bg-violet-50 @endif">
+            <svg class="h-full w-2 group-hover:fill-dss-purple group-hover:visible relative @if($currentActivePage == 'kriteria.penilaian') fill-dss-purple visible @else invisible @endif">
                 <rect class="w-2 h-full" />
             </svg>
             <svg class="mr-[30px] ml-12 stroke-gray-500 group-hover:stroke-dss-purple" width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,8 +23,8 @@
             </svg>                    
             <p class="text-lg font-medium text-gray-500 group-hover:font-semibold group-hover:text-dss-purple">Kriteria Penilaian</p>
         </a>
-        <a href="" class="group flex items-center h-16 hover:bg-violet-50">
-            <svg class="h-full w-2 invisible group-hover:fill-dss-purple group-hover:visible relative">
+        <a href="{{ route('data.mahasiswa') }}" class="group flex items-center h-16 hover:bg-violet-50 @if($currentActivePage == 'data.mahasiswa') bg-violet-50 @endif">
+            <svg class="h-full w-2 group-hover:fill-dss-purple group-hover:visible relative @if($currentActivePage == 'data.mahasiswa') fill-dss-purple visible @else invisible @endif">
                 <rect class="w-2 h-full" />
             </svg>
             <svg class="mr-[30px] ml-12 stroke-gray-500 group-hover:stroke-dss-purple" width="27" height="18" viewBox="0 0 29 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,8 +32,8 @@
             </svg>
             <p class="text-lg font-medium text-gray-500 group-hover:font-semibold group-hover:text-dss-purple">Data Mahasiswa</p>
         </a>
-        <a href="" class="group flex items-center h-16 hover:bg-violet-50">
-            <svg class="h-full w-2 invisible group-hover:fill-dss-purple group-hover:visible relative">
+        <a href="{{ route('data.penilaian') }}" class="group flex items-center h-16 hover:bg-violet-50 @if($currentActivePage == 'data.penilaian') bg-violet-50 @endif">
+            <svg class="h-full w-2 group-hover:fill-dss-purple group-hover:visible relative @if($currentActivePage == 'data.penilaian') fill-dss-purple visible @else invisible @endif">
                 <rect class="w-2 h-full" />
             </svg>
             <svg class="mr-[30px] ml-12 fill-gray-500 group-hover:fill-dss-purple" width="27" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,8 +41,8 @@
             </svg>
             <p class="text-lg font-medium text-gray-500 group-hover:font-semibold group-hover:text-dss-purple">Data Penilaian</p>
         </a>
-        <a href="" class="group flex items-center h-16 hover:bg-violet-50">
-            <svg class="h-full w-2 invisible group-hover:fill-dss-purple group-hover:visible relative">
+        <a href="{{ route('hasil.seleksi') }}" class="group flex items-center h-16 hover:bg-violet-50 @if($currentActivePage == 'hasil.seleksi') bg-violet-50 @endif">
+            <svg class="h-full w-2 group-hover:fill-dss-purple group-hover:visible relative @if($currentActivePage == 'hasil.seleksi') fill-dss-purple visible @else invisible @endif">
                 <rect class="w-2 h-full" />
             </svg>
             <svg class="mr-[30px] ml-12 stroke-gray-500 group-hover:stroke-dss-purple" width="27" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
