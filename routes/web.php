@@ -3,6 +3,7 @@
 use App\Http\Livewire\DataMahasiswa;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\KriteriaPenilaian;
+use App\Http\Livewire\ModalEditMahasiswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,5 +34,7 @@ Route::get('/data-mahasiswa', DataMahasiswa::class)->name('data.mahasiswa');
 Route::get('/data-penilaian', DataMahasiswa::class)->name('data.penilaian');
 
 Route::get('/hasil-seleksi', DataMahasiswa::class)->name('hasil.seleksi');
+
+Route::get('/data-mahasiswa/{nim}/edit', ModalEditMahasiswa::class)->name('data.mahasiswa.edit');
 
 require __DIR__ . '/auth.php';

@@ -14,6 +14,7 @@ module.exports = {
             },
             colors: {
                 'dss-purple': '#5D35CF',
+                'dss-purple-hover': '#784FED',
                 'dss-light-purple': "#FAF4FF"
             }
         },
