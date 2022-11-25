@@ -7,12 +7,10 @@ use Livewire\Component;
 
 class Table extends Component
 {
-    // public $mahasiswas;
     protected $listeners = ['mahasiswaStore' => 'render', 'mahasiswaUpdate' => 'render', 'mahasiswaDelete' => 'render'];
 
     public function render()
     {
-        // $this->mahasiswas = Mahasiswa::orderBy('created_at', 'desc')->get();
         return view('livewire.components.table', [
             'mahasiswas' => Mahasiswa::orderBy('created_at', 'desc')->get()
         ]);
