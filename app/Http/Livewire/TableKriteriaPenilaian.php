@@ -7,7 +7,8 @@ use Livewire\Component;
 
 class TableKriteriaPenilaian extends Component
 {
-    protected $listeners = ['kriteriaStore' => 'render', 'kriteriaDelete' => 'render'];
+    protected $listeners = ['kriteriaStore' => 'render', 'kriteriaUpdate' => 'render', 'kriteriaDelete' => 'render'];
+    public $id_kriteria;
 
     public function render()
     {
@@ -16,9 +17,9 @@ class TableKriteriaPenilaian extends Component
         ]);
     }
 
-    public function delete($id)
+    public function delete($id_kriteria)
     {
-        $kriteria = Kriteria::find($id);
+        $kriteria = Kriteria::find($id_kriteria);
         $kriteria->delete();
 
         session()->flash('success', 'Kriteria berhasil dihapus');

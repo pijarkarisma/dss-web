@@ -19,4 +19,9 @@ class Mahasiswa extends Model
         'telepon',
         'semester'
     ];
+
+    public function mahasiswa()
+    {
+        return $this->belongsTo(NilaiMahasiswa::class);
+    }
 }

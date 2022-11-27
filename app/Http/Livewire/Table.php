@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Models\Mahasiswa;
+use App\Models\NilaiMahasiswa;
+use App\Models\SystemStatus;
 use Livewire\Component;
 
 class Table extends Component
@@ -20,6 +22,15 @@ class Table extends Component
     {
         $mahasiswa = Mahasiswa::find($nim);
         $mahasiswa->delete();
+
+        $nilaiMahasiswa = NilaiMahasiswa::where('mahasiswa', $nim)->first();
+        if (!is_null($nilaiMahasiswa)) {
+            $nilaiMahasiswa->delete();
+
+            SystemStatus::where('id', 2)->update([
+                'state' => false
+            ]);
+        }
 
         session()->flash('success', 'Mahasiswa berhasil dihapus');
 

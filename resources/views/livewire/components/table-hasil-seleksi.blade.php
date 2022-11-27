@@ -6,61 +6,40 @@
                     <input class="appearance-none h-6 w-6 border border-gray-300 rounded bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 bg-no-repeat bg-center bg-contain cursor-pointer" type="checkbox" value="" id="flexCheckDefault"> 
                 </th> --}}
                 <th scope="col" class="py-3 px-6">
+                    Peringkat
+                </th>
+                <th scope="col" class="py-3 px-6">
                     NIM
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Nama Lengkap
+                    Nama Mahasiswa
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Tanggal Lahir
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Alamat
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    No. Telepon
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Semester
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Aksi
+                    Nilai Akhir
                 </th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($mahasiswas as $index => $mahasiswa)
+            @foreach ($nilaiMahasiswas as $index => $nilaiMhs)
                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                     {{-- <td class="py-4 px-6">
                         <input class="h-6 w-6 border border-gray-300 rounded bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 bg-no-repeat bg-center bg-contain cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
                     </td> --}}
                     <td class="py-4 px-6">
-                        {{ $mahasiswa->nim }}
+                        {{$index + 1}}.
                     </td>
                     <td class="py-4 px-6">
-                        {{ $mahasiswa->nama_mhs }}
+                        {{ $nilaiMhs['mahasiswa'] }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $mahasiswa->tgl_lahir }}
+                        @foreach ($mahasiswas as $mhs)
+                            @if ($nilaiMhs['mahasiswa'] == $mhs['nim'])
+                                {{ $mhs['nama_mhs'] }}
+                            @endif
+                        @endforeach
                     </td>
                     <td class="py-4 px-6">
-                        {{ $mahasiswa->alamat }}
-                    </td>
-                    <td class="py-4 px-6">
-                        {{ $mahasiswa->telepon }}
-                    </td>
-                    <td class="py-4 px-6">
-                        {{ $mahasiswa->semester }}
-                    </td>
-                    <td class="py-4 px-6 gap-x-4">
-                        <div class="flex flex-row gap-x-4">
-                            <span>
-                                <a href="{{ route('data.mahasiswa.edit', ['nim'=>$mahasiswa->nim]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Ubah</a>
-                            </span>
-                            <span>
-                                <button wire:click="delete({{$mahasiswa->nim}})" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hapus</button>
-                            </span>
-                        </div>
+                        {{ number_format($nilaiMhs['hasil_akhir'], 5) }}
                     </td>
                 </tr>
             @endforeach

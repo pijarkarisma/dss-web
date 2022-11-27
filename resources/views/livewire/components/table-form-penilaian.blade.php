@@ -9,19 +9,16 @@
                     No
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    ID Kriteria
+                    Mahasiswa
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Nama Kriteria
+                    IPK
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Bobot
-                </th>
-                {{-- <th scope="col" class="py-3 px-6">
-                    Penghasilan Orang Tua    
+                    Penghasilan Orang Tua
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Prestasi Akademik   
+                    Prestasi Akademik
                 </th>
                 <th scope="col" class="py-3 px-6">
                     Keaktifan Organisasi
@@ -34,14 +31,14 @@
                 </th>
                 <th scope="col" class="py-3 px-6">
                     Motivation Letter
-                </th> --}}
+                </th>
                 <th scope="col" class="py-3 px-6">
                     Aksi
                 </th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($kriterias as $index => $kriteria)
+            @foreach ($nilai_mahasiswa as $index => $nilai_mahasiswa)
                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                     {{-- <td class="py-4 px-6">
                         <input class="h-6 w-6 border border-gray-300 rounded bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 bg-no-repeat bg-center bg-contain cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
@@ -50,40 +47,37 @@
                         {{$index + 1}}.
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->id_kriteria }}
+                        {{ $nilai_mahasiswa->mahasiswa }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->nama_kriteria }}
+                        {{ $nilai_mahasiswa->ipk }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->bobot }}
-                    </td>
-                    {{-- <td class="py-4 px-6">
-                        {{ $kriteria->penghasilan_ortu }}
+                        {{ $nilai_mahasiswa->penghasilan_ortu }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->prestasi_akademik }}
+                        {{ $nilai_mahasiswa->prestasi_akademik }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->keaktifan_organisasi }}
+                        {{ $nilai_mahasiswa->keaktifan_organisasi }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->nilai_wawancara }}
+                        {{ $nilai_mahasiswa->nilai_wawancara }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->kondisi_tinggal }}
+                        {{ $nilai_mahasiswa->kondisi_tinggal }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $kriteria->motivation_letter }}
-                    </td> --}}
+                        {{ $nilai_mahasiswa->motivation_letter }}
+                    </td>
                     <td class="py-4 px-6 gap-x-4">
                         <div class="flex flex-row gap-x-4">
                             <span>
-                                <a href="{{ route('data.penilaian.edit', ['id'=>$kriteria->id_kriteria]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Ubah</a>
+                                <a href="{{ route('form.penilaian.edit', ['id'=>$nilai_mahasiswa->id]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Ubah</a>
                             </span>
-                            {{-- <span>
-                                <button wire:click="delete('{{$kriteria->id_kriteria}}')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hapus</button>
-                            </span> --}}
+                            <span>
+                                <button wire:click="delete('{{$nilai_mahasiswa->id}}')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hapus</button>
+                            </span>
                         </div>
                     </td>
                 </tr>

@@ -1,19 +1,19 @@
-<div class="flex h-full w-screen">
+<div class="flex flex-row h-full min-h-screen w-screen">
     <livewire:sidebar-menu />
     
     <div class="flex-1 px-20">
         <livewire:navbar />
 
-        <div class="grid grid-cols-2 w-fit grid-rows-2 gap-24">
+        <div class="grid 2xl:grid-cols-3 xl:grid-cols-2 w-fit grid-rows-2 gap-24">
             <a href="{{ route('data.mahasiswa') }}" class="container flex items-center w-96 h-44 bg-gradient-to-r from-purple-500 to-blue-700 rounded-2xl drop-shadow-md hover:from-blue-700 hover:to-purple-500">
                 <div class="grid grid-rows-2 px-12 gap-y-6">
                     <span>
-                        <svg class="stroke-white" height="48" viewBox="0 0 29 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="stroke-white" height="40" viewBox="0 0 29 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.7141 3.85714C22.7141 5.42008 21.4279 6.71429 19.7727 6.71429C18.1132 6.71429 16.8182 5.41578 16.8182 3.85714C16.8182 2.29851 18.1132 1 19.7727 1C21.4279 1 22.7141 2.2942 22.7141 3.85714ZM12.1686 3.85714C12.1686 5.42008 10.8824 6.71429 9.22727 6.71429C7.56772 6.71429 6.27273 5.41578 6.27273 3.85714C6.27273 2.29851 7.56772 1 9.22727 1C10.8824 1 12.1686 2.2942 12.1686 3.85714ZM1 14.7857C1 14.4139 1.18298 14.0081 1.67862 13.5622C2.18001 13.1112 2.92353 12.6959 3.82548 12.3439C5.62995 11.6396 7.81324 11.2857 9.22727 11.2857C10.6413 11.2857 12.8246 11.6396 14.6291 12.3439C15.531 12.6959 16.2745 13.1112 16.7759 13.5622C17.2716 14.0081 17.4545 14.4139 17.4545 14.7857V17H1V14.7857ZM22.0909 14.7857C22.0909 13.4438 21.6526 12.3047 20.9591 11.352C22.2544 11.4845 23.821 11.8156 25.1745 12.3439C26.0765 12.6959 26.82 13.1112 27.3214 13.5622C27.817 14.0081 28 14.4139 28 14.7857V17H22.0909V14.7857Z" stroke-width="2"/>
                         </svg>
                     </span>
                     <span>
-                        <p class="text-white text-3xl font-medium align-baseline">Data mahasiswa</p>
+                        <p class="text-white text-3xl font-medium align-baseline">Data Mahasiswa</p>
                     </span>
                 </div>
             </a>
@@ -26,12 +26,12 @@
                         </svg>                            
                     </span>
                     <span>
-                        <p class="text-white text-3xl font-medium align-baseline">Data penilaian</p>
+                        <p class="text-white text-3xl font-medium align-baseline">Data Kriteria</p>
                     </span>
                 </div>
             </a>
 
-            <a href="" class="container flex items-center w-96 h-44 bg-gradient-to-r from-purple-500 to-blue-700 rounded-2xl drop-shadow-md hover:from-blue-700 hover:to-purple-500">
+            <a href="{{ route('form.penilaian') }}" class="container flex items-center w-96 h-44 bg-gradient-to-r from-purple-500 to-blue-700 rounded-2xl drop-shadow-md hover:from-blue-700 hover:to-purple-500">
                 <div class="grid grid-rows-2 px-12 gap-y-6">
                     <span>
                         <svg class="stroke-white" height="48" viewBox="0 0 58 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +40,36 @@
                         </svg>                            
                     </span>
                     <span>
-                        <p class="text-white text-3xl font-medium align-baseline">Form penilaian</p>
+                        <p class="text-white text-3xl font-medium align-baseline">Form Penilaian</p>
+                    </span>
+                </div>
+            </a>
+
+            <a href="{{ route('analisa.kriteria') }}" class="container flex items-center w-96 h-44 bg-gradient-to-r from-purple-500 to-blue-700 rounded-2xl drop-shadow-md hover:from-blue-700 hover:to-purple-500">
+                <div class="grid grid-rows-2 px-12 gap-y-6">
+                    <span>
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.112 39.03L16.288 26.73L22.868 33.03L30.91 26L35.39 30.368M44 11C44 10.2044 43.6839 9.44129 43.1213 8.87868C42.5587 8.31607 41.7956 8 41 8H7C6.20435 8 5.44129 8.31607 4.87868 8.87868C4.31607 9.44129 4 10.2044 4 11V20H44V11Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M44 18V37C44 37.7956 43.6839 38.5587 43.1213 39.1213C42.5587 39.6839 41.7956 40 41 40H12M19.112 14H37.112M11.11 14H13.11M4 18V27" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                    </span>
+                    <span>
+                        <p class="text-white text-3xl font-medium align-baseline">Analisis Kriteria</p>
+                    </span>
+                </div>
+            </a>
+
+            <a href="{{ route('analisis.alternatif') }}" class="container flex items-center w-96 h-44 bg-gradient-to-r from-purple-500 to-blue-700 rounded-2xl drop-shadow-md hover:from-blue-700 hover:to-purple-500">
+                <div class="grid grid-rows-2 px-12 gap-y-6">
+                    <span>
+                        <svg class="stroke-white" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 7H44M4 23H15M4 39H15" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M31.5 34C33.7543 34 35.9163 33.1045 37.5104 31.5104C39.1045 29.9163 40 27.7543 40 25.5C40 23.2457 39.1045 21.0837 37.5104 19.4896C35.9163 17.8955 33.7543 17 31.5 17C29.2457 17 27.0837 17.8955 25.4896 19.4896C23.8955 21.0837 23 23.2457 23 25.5C23 27.7543 23.8955 29.9163 25.4896 31.5104C27.0837 33.1045 29.2457 34 31.5 34V34Z" stroke-width="4"/>
+                            <path d="M37 32L44 39.05" stroke-width="4" stroke-linecap="round"/>
+                        </svg>                        
+                    </span>
+                    <span>
+                        <p class="text-white text-3xl font-medium align-baseline">Analisis Alternatif</p>
                     </span>
                 </div>
             </a>
@@ -48,12 +77,13 @@
             <a href="{{ route('hasil.seleksi') }}" class="container flex items-center w-96 h-44 bg-gradient-to-r from-purple-500 to-blue-700 rounded-2xl drop-shadow-md hover:from-blue-700 hover:to-purple-500">
                 <div class="grid grid-rows-2 px-12 gap-y-6">
                     <span>
-                        <svg class="stroke-white" height="48" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.8184 3.03672L15.0556 3.7H15.76H21.3333C22.236 3.7 23 4.45554 23 5.4V24.3C23 25.2445 22.236 26 21.3333 26H2.66667C1.76396 26 1 25.2445 1 24.3V5.4C1 4.45554 1.76396 3.7 2.66667 3.7H8.24H8.94442L9.18161 3.03672C9.61004 1.83862 10.72 1 12 1C13.28 1 14.39 1.83862 14.8184 3.03672ZM14.6667 22.6H15.6667V21.6V18.9V17.9H14.6667H5.33333H4.33333V18.9V21.6V22.6H5.33333H14.6667ZM18.6667 17.2H19.6667V16.2V13.5V12.5H18.6667H5.33333H4.33333V13.5V16.2V17.2H5.33333H18.6667ZM18.6667 11.8H19.6667V10.8V8.1V7.1H18.6667H5.33333H4.33333V8.1V10.8V11.8H5.33333H18.6667ZM14.3333 4.05C14.3333 2.76696 13.2973 1.7 12 1.7C10.7027 1.7 9.66667 2.76696 9.66667 4.05C9.66667 5.33304 10.7027 6.4 12 6.4C13.2973 6.4 14.3333 5.33304 14.3333 4.05Z" stroke-width="2"/>
+                        <svg class="stroke-white" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 30H31M17 36H24M38 4H10C9.46957 4 8.96086 4.21071 8.58579 4.58579C8.21071 4.96086 8 5.46957 8 6V42C8 42.5304 8.21071 43.0391 8.58579 43.4142C8.96086 43.7893 9.46957 44 10 44H38C38.5304 44 39.0391 43.7893 39.4142 43.4142C39.7893 43.0391 40 42.5304 40 42V6C40 5.46957 39.7893 4.96086 39.4142 4.58579C39.0391 4.21071 38.5304 4 38 4V4Z" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M30 13L22 21L18 17" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </span>
                     <span>
-                        <p class="text-white text-3xl font-medium align-baseline">Hasil seleksi</p>
+                        <p class="text-white text-3xl font-medium align-baseline">Hasil Seleksi</p>
                     </span>
                 </div>
             </a>

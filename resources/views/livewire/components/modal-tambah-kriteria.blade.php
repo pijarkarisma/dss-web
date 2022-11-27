@@ -16,7 +16,38 @@
       <form id="formTambahKriteria" wire:submit.prevent="store">
         <div class="modal-body relative p-10">
                 <div class="grid grid-cols-3 mb-10 flex items-center">
-                    <label for="nama_kriteria" class="text-lg text-gray-800 font-medium">Kriteria</label>
+                    <label for="id_kriteria" class="text-lg text-gray-800 font-medium">ID</label>
+                    <select type="text" id="id_kriteria" wire:model="id_kriteria" wire:change="onChangeOption(onChangeKriteria())" class="
+                    form-select 
+                    appearance-none
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-400
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 
+                    focus:bg-white 
+                    focus:border-blue-600 
+                    focus:outline-none
+                    col-span-2" 
+                    aria-label="Default select example"
+                    >
+                    @foreach ($list_kriteria as $item)
+                        <option value={{$item}}>{{$item}}</option>
+                    @endforeach  
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-3 mb-10 flex items-center">
+                    <label for="nama_kriteria" class="text-lg text-gray-800 font-medium">Nama kriteria</label>
                     <input type="text" id="nama_kriteria" wire:model="nama_kriteria" class="
                         form-control
                         block
@@ -36,9 +67,10 @@
                         col-span-2
                 ">
                 </div>
-                <div class="grid grid-cols-3 mb-10 flex items-center">
-                    <label for="bobot" class="text-lg text-gray-800 font-medium">Bobot</label>
-                    <input type="text" id="bobot" wire:model="bobot" class="
+                
+                {{-- <div class="grid grid-cols-3 mb-10 flex items-center">
+                    <label for="ipk" class="text-lg text-gray-800 font-medium">IPK</label>
+                    <input type="text" id="ipk" wire:model="ipk" class="
                         form-control
                         block
                         w-full
@@ -57,6 +89,132 @@
                         col-span-2
                     ">
                 </div>
+                <div class="grid grid-cols-3 mb-10 flex items-center">
+                  <label for="penghasilan_ortu" class="text-lg text-gray-800 font-medium">Penghasilan orang tua</label>
+                  <input type="text" id="penghasilan_ortu" wire:model="penghasilan_ortu" class="
+                      form-control
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-800
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-400
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-800 focus:bg-white focus:border-blue-600 focus:outline-none
+                      col-span-2
+                  ">
+                </div>
+                <div class="grid grid-cols-3 mb-10 flex items-center">
+                  <label for="prestasi_akademik" class="text-lg text-gray-800 font-medium">Prestasi akademik</label>
+                  <input type="text" id="prestasi_akademik" wire:model="prestasi_akademik" class="
+                      form-control
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-800
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-400
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-800 focus:bg-white focus:border-blue-600 focus:outline-none
+                      col-span-2
+                  ">
+                </div>
+                <div class="grid grid-cols-3 mb-10 flex items-center">
+                  <label for="keaktifan_organisasi" class="text-lg text-gray-800 font-medium">Keaktifan organisasi</label>
+                  <input type="text" id="keaktifan_organisasi" wire:model="keaktifan_organisasi" class="
+                      form-control
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-800
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-400
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-800 focus:bg-white focus:border-blue-600 focus:outline-none
+                      col-span-2
+                  ">
+                </div>
+                <div class="grid grid-cols-3 mb-10 flex items-center">
+                  <label for="nilai_wawancara" class="text-lg text-gray-800 font-medium">Nilai wawancara</label>
+                  <input type="text" id="nilai_wawancara" wire:model="nilai_wawancara" class="
+                      form-control
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-800
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-400
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-800 focus:bg-white focus:border-blue-600 focus:outline-none
+                      col-span-2
+                  ">
+                </div>
+                <div class="grid grid-cols-3 mb-10 flex items-center">
+                  <label for="kondisi_tinggal" class="text-lg text-gray-800 font-medium">Kondisi tempat tinggal</label>
+                  <input type="text" id="kondisi_tinggal" wire:model="kondisi_tinggal" class="
+                      form-control
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-800
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-400
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-800 focus:bg-white focus:border-blue-600 focus:outline-none
+                      col-span-2
+                  ">
+                </div>
+                <div class="grid grid-cols-3 mb-10 flex items-center">
+                  <label for="motivation_letter" class="text-lg text-gray-800 font-medium">Motivation letter</label>
+                  <input type="number" id="motivation_letter" wire:model="motivation_letter" class="
+                      form-control
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-800
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-400
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-800 focus:bg-white focus:border-blue-600 focus:outline-none
+                      col-span-2
+                  ">
+                </div> --}}
             </div>
         </form>
 
@@ -74,4 +232,11 @@
         </div>
     </div>
   </div>
+
+  <script>
+    function onChangeKriteria(){
+        const selectBox = document.getElementById('id_kriteria');
+        return selectBox.selectedIndex
+    }
+  </script>
 </div>

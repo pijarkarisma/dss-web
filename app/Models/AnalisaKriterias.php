@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kriteria extends Model
+class AnalisaKriterias extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id_kriteria';
+    protected $primaryKey = 'id';
     public $incrementing = false;
 
     protected $fillable = [
-        'id_kriteria',
-        'nama_kriteria',
-        'bobot'
+        'id',
+        'nilai',
+        'nilaiKiri',
+        'nilaiKanan'
     ];
 }

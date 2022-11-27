@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKriteriasTable extends Migration
+class AddDefaultValueForHasilAkhir extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateKriteriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('kriterias', function (Blueprint $table) {
-            $table->string('id_kriteria')->primary();
-            $table->string('nama_kriteria');
-            $table->float('bobot');
-            $table->timestamps();
+        Schema::table('nilai_mahasiswas', function (Blueprint $table) {
+            $table->decimal('hasil_akhir', $precision = 18, $scale = 15)->default('0')->change();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateKriteriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kriterias');
+        Schema::table('nilai_mahasiswas', function (Blueprint $table) {
+            //
+        });
     }
 }

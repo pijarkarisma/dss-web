@@ -1,4 +1,4 @@
-<div class="flex h-full w-screen">
+<div class="flex flex-row h-full min-h-screen w-screen">
     <livewire:sidebar-menu />
 
     <div class="flex-1 px-20">
@@ -9,12 +9,12 @@
                 <svg class="stroke-dss-purple" height="48" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 2.375H18.8947V3.125H1V2.375ZM1 18.875H18.8947V19.625H1V18.875ZM1 10.625H18.8947V11.375H1V10.625Z" stroke-width="2"/>
                 </svg>
-                <p class="text-3xl text-dss-purple font-semibold">Data Penilaian</p>
+                <p class="text-3xl text-dss-purple font-semibold">Data Kriteria</p>
             </span>
 
             <hr class="my-8 bg-gray-400 h-[2px]">
 
-            <span class="flex justify-end gap-x-4 mb-8">
+            {{-- <span class="flex justify-end gap-x-4 mb-8">
                 <button class="bg-dss-purple hover:bg-dss-purple-hover text-white text-md font-medium py-2 px-6 rounded-xl">
                     <span class="flex items-center gap-x-2">
                         <svg class="fill-white" height="30" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@
                         <p>Tambah data</p>
                     </span>
                 </button>
-            </span>
+            </span> --}}
 
             <livewire:table-kriteria-penilaian/>
 
